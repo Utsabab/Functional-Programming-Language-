@@ -9,15 +9,13 @@
 ))
 
 (DEFINE (sum-up-numbers-simple L)
-        (cond ((NULL? L) 
+        (cond ((NULL? L) ;if the list is empty, returns the list
                0)
-              ((number? (CAR L))
-               (+ (CAR L) (sum-up-numbers-simple (CDR L))))
-              (else
-               (sum-up-numbers-simple(CDR L))
-              
+              ((number? (CAR L));if the first element of list is number goes to the next line
+               (+ (CAR L) (sum-up-numbers-simple (CDR L)))) ;adds up all the numeric atoms in the list
+               (else
+               (sum-up-numbers-simple(CDR L));if the first element is not numeric, then recursion to the CDR of list 
 )))
-              
                
                
 
