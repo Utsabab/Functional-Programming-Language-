@@ -12,9 +12,11 @@
         (cond ((NULL? L) 
                0)
               ((number? (CAR L))
-               (+ (CAR L) (sum-up-numbers-simple (CDR L)))) 
+               (+ (CAR L) (sum-up-numbers-simple (CDR L))))
+              (else
+               (sum-up-numbers-simple(CAR L))
               
-))
+)))
               
                
                
