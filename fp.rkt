@@ -20,6 +20,9 @@
 (DEFINE (sum-up-numbers-general L)
         (cond ((NULL? L) ;if the list is empty, returns the list
                0)
+              ((list? (CAR L)) 
+               (+(sum-up-numbers-general L))) 
+              
               ((number? (CAR L));if the first element of list is number goes to the next line
                (+ (CAR L) (sum-up-numbers-general (CDR L)))) ;adds up all the numeric atoms in the list
                (else
