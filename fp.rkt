@@ -20,8 +20,8 @@
 (DEFINE (sum-up-numbers-general L)
         (cond ((NULL? L) ;if the list is empty, returns the list
                0)
-              ((list? (CAR L)) 
-               (+(sum-up-numbers-general (CAR L)) (sum-up-numbers-general (CDR L)))) ;if the CAR L is list then recursion 
+              ((list? (CAR L)) ;if the CAR L is a list goes to the next line
+               (+(sum-up-numbers-general (CAR L)) (sum-up-numbers-general (CDR L)))) ;sums the numbers inside the sublist and the main list 
               
               ((number? (CAR L));if the first element of list is number goes to the next line
                (+ (CAR L) (sum-up-numbers-general (CDR L)))) ;adds up all the numeric atoms in the list
