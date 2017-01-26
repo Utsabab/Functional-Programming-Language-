@@ -29,6 +29,19 @@
                (sum-up-numbers-general(CDR L));if the first element is not numeric, then recursion to the CDR of list 
 )))
 
+(DEFINE (find-min-helper L)
+        (Cond
+         ((NULL? L) ;if the list is NULL, returns the list 
+          L)
+))
+
+          
+          
+         
+
+;(DEFINE (
+           
+         
 
 
 
