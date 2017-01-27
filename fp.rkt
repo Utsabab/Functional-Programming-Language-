@@ -47,3 +47,12 @@
             
 ))
 
+;Finds the next big number from the list while the minimum number is given 
+(DEFINE (next-big-helper L min-num)
+        (cond
+          ((NULL? L) #f) 
+          
+))
+
+(DEFINE (min-above-min L1 L2)
+        (cond))
