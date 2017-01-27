@@ -44,6 +44,8 @@
 
 (DEFINE (min-above-min L1 L2)
         (cond
+          ((NULL? L2)
+           (find-min-helper L1))
          
           ((> (CAR L1) (find-min-helper L2))
            (Cond
