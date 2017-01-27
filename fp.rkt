@@ -1,3 +1,4 @@
+;Question 1
 (DEFINE (reverse-general L)
         (cond
           ((NULL? L)  ;if the list is empty, return empty list 
@@ -8,6 +9,7 @@
            
 ))
 
+;Question 2
 (DEFINE (sum-up-numbers-simple L)
         (cond ((NULL? L) ;if the list is empty, returns the list
                0)
@@ -17,6 +19,7 @@
                (sum-up-numbers-simple(CDR L));if the first element is not numeric, then recursion to the CDR of list 
 )))
 
+;Question 3
 (DEFINE (sum-up-numbers-general L)
         (cond ((NULL? L) ;if the list is empty, returns the list
                0)
@@ -29,45 +32,18 @@
                (sum-up-numbers-general(CDR L));if the first element is not numeric, then recursion to the CDR of list 
 )))
 
+;Question 4 
+;Finds the minimum number in any given List 
 (DEFINE (find-min-helper L)
-        (Cond
-         ((NULL? (CDR L)) ;returns L if the list is empty 
-          (CAR L))
-
-         ((number? (CAR L)) ;if (CAR L) is number 
-          (Cond
-           ((< (CAR L) (find-min-helper (CDR L))) (CAR L)) ;finding minimum number 
-           (else (find-min-helper (CDR L)))
-           ))
-         (else (find-min-helper (CDR L))) ;else recursion 
+        (cond
+          ((NULL? L) #f) ;returns #f if the list is empty
+         ((NOT (NUMBER? (CAR L))) (find-min-helper (CDR L))) ;if (CAR L) is not number, recursion on (CDR L)
+         ((NULL? (CDR L)) (CAR L)) ;if the list ends then (CAR L)
+         ((NUMBER? (find-min-helper (CDR L)))
+          (cond
+            ((< (CAR L) (find-min-helper (CDR L))) (CAR L)) ;finding minimum number 
+            (else (find-min-helper (CDR L)))))
+         (else (CAR L))
+            
 ))
 
-(DEFINE (min-above-min L1 L2)
-        (cond
-          ((NULL? L2)
-           (find-min-helper L1))
-         
-          ((> (CAR L1) (find-min-helper L2))
-           (Cond
-            ((< (CAR L1) (min-above-min (CDR L1) L2))
-             (CAR L))
-           (else (min-above-min (CDR L1) L2)))
-
-           )
-
-          
-          (else (min-above-min (CDR L1) L2)))
-          
-
-          )
-          
-    
-
-           
-         
-
-
-
-
-               
-              
