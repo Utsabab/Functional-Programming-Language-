@@ -33,13 +33,18 @@
         (Cond
          ((NULL? L) ;if the list is NULL, returns the list 
           L)
+
+         ((number? (CAR L)) ;if CAR L is number 
+          (Cond
+           ((< (CAR L) (find-min-helper (CDR L))) (CAR L)) ;Finding minimum number 
+           (else (find-min-helper (CDR L)))
+           ))
+         (else (find-min-helper (CDR L))) ;else recursion 
 ))
 
           
     
          
-;No change at all, testing Git User
-
            
          
 
