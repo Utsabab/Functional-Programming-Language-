@@ -63,6 +63,8 @@
 
 (DEFINE (min-above-min L1 L2)
         (cond
-          ((NULL? L1) #f) ;if the list1 is empty, #f 
+          ((NULL? L1) #f) ;if the list1 is empty, #f
+          ((NULL? L2) (find-min-helper L1)) ;if the list2 is empty, minimum of list1
+          (else (next-big-helper L1 (find-min-helper L2)))) ;else find next big number in list1
 
-          ))
+          )
