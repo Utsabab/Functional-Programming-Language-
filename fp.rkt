@@ -50,12 +50,12 @@
 ;Finds the next big number from the list while the minimum number is given 
 (DEFINE (next-big-helper L min-num)
         (cond
-          ((NULL? L) #f)
-           ((NOT (NUMBER? (CAR L))) (next-big-helper (CDR L) min-num)) 
-          ((> (CAR L) min-num)
+          ((NULL? L) #f) ;#f if the list is empty
+           ((NOT (NUMBER? (CAR L))) (next-big-helper (CDR L) min-num)) ;if not number, recursion on (CDR L)
+          ((> (CAR L) min-num) ;if (CAR L) is bigger than minimum number 
            (cond
-             ((NULL? (CDR L)) (CAR L))  
-             ((NUMBER? (next-big-helper (CDR L) min-num)) (MIN (CAR L) (next-big-helper (CDR L) min-num))) 
+             ((NULL? (CDR L)) (CAR L))  ;if list1 has only one number then return the number 
+             ((NUMBER? (next-big-helper (CDR L) min-num)) (MIN (CAR L) (next-big-helper (CDR L) min-num))) ;if the next element in the list is number, minimum of (CAR L) and rest of the list
              (else (CAR L))))
           (else (next-big-helper (CDR L) min-num)))
           
