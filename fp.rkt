@@ -62,4 +62,7 @@
 )
 
 (DEFINE (min-above-min L1 L2)
-        (cond))
+        (cond
+          ((NULL? L1) #f) ;if the list1 is empty, #f 
+
+          ))
