@@ -34,7 +34,12 @@
          ((NULL? L) ;returns L if the list is empty 
           L)
 
-         
+         ((number? (CAR L)) ;if (CAR L) is number 
+          (Cond
+           ((< (CAR L) (find-min-helper (CDR L))) (CAR L)) ;finding minimum number 
+           (else (find-min-helper (CDR L)))
+           ))
+         (else (find-min-helper (CDR L))) ;else recursion 
 ))
 
           
