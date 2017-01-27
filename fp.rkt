@@ -50,9 +50,16 @@
 ;Finds the next big number from the list while the minimum number is given 
 (DEFINE (next-big-helper L min-num)
         (cond
-          ((NULL? L) #f) 
+          ((NULL? L) #f)
+           ((NOT (NUMBER? (CAR L))) (next-big-helper (CDR L) min-num)) 
+          ((> (CAR L) min-num)
+           (cond
+             ((NULL? (L)) (CAR L))  
+             ((NUMBER? (next-big-helper (CDR L) min-num)) (MIN (CAR L) (next-big-helper (CDR L) min-num))) 
+             (else (CAR L))))
+          (else (next-big-helper (CDR L) min-num)))
           
-))
+)
 
 (DEFINE (min-above-min L1 L2)
         (cond))
