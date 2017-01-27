@@ -31,8 +31,8 @@
 
 (DEFINE (find-min-helper L)
         (Cond
-         ((NULL? L) ;returns L if the list is empty 
-          L)
+         ((NULL? (CDR L)) ;returns L if the list is empty 
+          (CAR L))
 
          ((number? (CAR L)) ;if (CAR L) is number 
           (Cond
