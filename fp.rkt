@@ -42,6 +42,22 @@
          (else (find-min-helper (CDR L))) ;else recursion 
 ))
 
+(DEFINE (min-above-min L1 L2)
+        (cond
+         
+          ((> (CAR L1) (find-min-helper L2))
+           (Cond
+            ((< (CAR L1) (min-above-min (CDR L1) L2))
+             (CAR L))
+           (else (min-above-min (CDR L1) L2)))
+
+           )
+
+          
+          (else (min-above-min (CDR L1) L2)))
+          
+
+          )
           
     
 
