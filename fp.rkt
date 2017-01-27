@@ -54,7 +54,7 @@
            ((NOT (NUMBER? (CAR L))) (next-big-helper (CDR L) min-num)) 
           ((> (CAR L) min-num)
            (cond
-             ((NULL? (L)) (CAR L))  
+             ((NULL? (CDR L)) (CAR L))  
              ((NUMBER? (next-big-helper (CDR L) min-num)) (MIN (CAR L) (next-big-helper (CDR L) min-num))) 
              (else (CAR L))))
           (else (next-big-helper (CDR L) min-num)))
